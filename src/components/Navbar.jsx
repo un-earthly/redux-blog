@@ -1,12 +1,12 @@
-import React, { Children } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar({ children }) {
   const links = <>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/talks">All Talks</Link></li>
-    <li><Link to="/about">About Headbangers</Link></li>
-    <li><Link to="/contact">Contact Banger</Link></li>
+    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/about">Reading History</NavLink></li>
+    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+
   </>
   return (
     <div className="drawer">
@@ -19,9 +19,13 @@ export default function Navbar({ children }) {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2 text-2xl font-metalMania">HeadBangers Talks</div>
+          <div className="flex-1 px-2 mx-2 text-2xl font-metalMania">
+            <Link to="/">
+              HeadBangers Talks
+            </Link>
+          </div>
           <div className="flex-none hidden lg:block">
-            <ul className="menu menu-horizontal font-metalMania">
+            <ul className="menu menu-horizontal font-metalMania rounded-full">
               {links}
             </ul>
           </div>
